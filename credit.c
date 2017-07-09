@@ -20,7 +20,6 @@ int main(void)
     else {
         printf("INVALID\n");
     }
-    return 0;
 }
 
 bool luhn_pass(long long n)
@@ -77,13 +76,13 @@ bool amex_match(long long n)
     return (num_digits(n) == 15 && (n / 10000000000000 == 34 || n / 10000000000000 == 37));
 }
 
+bool visa_match(long long n)
+{
+    return ((num_digits(n) == 13 || num_digits(n) == 16) && (n / 1000000000000000 == 4 || n / 1000000000000 == 4));
+}
+
 bool mastercard_match(long long n)
 {
     return (num_digits(n) == 16 && (n / 100000000000000 == 51 || n / 100000000000000 == 52
                                        || n / 100000000000000 == 53 || n / 100000000000000 == 54 || n / 100000000000000 == 55));
-}
-
-bool visa_match(long long n)
-{
-    return ((num_digits(n) == 13 || num_digits(n) == 16) && (n / 1000000000000000 == 4 || n / 1000000000000 == 4));
 }
