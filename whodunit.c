@@ -76,14 +76,10 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
             
+            // Adding red filter
             triple.rgbtBlue = 0;
             triple.rgbtGreen = 0;
-            
-            // Test stuff
-            // eprintf("Testing:\n");
-            // printf("%c", RGBTRIPLE.rgbtRed);
-            // triple.rgbtRed = 0;
-            // eprintf("%i\n", triple.rgbtRed);
+
 
             // write RGB triple to outfile
             fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
