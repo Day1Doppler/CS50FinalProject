@@ -1,0 +1,12 @@
+1.  Definition of standard C int types
+2.  To allow us to specify different amounts of memory to allocate for different file component values
+3.  1, 4, 4, 2
+4.  0x4d42 / BM
+5.  Byte size of fileheader (14) vs. byte size of infoheader (40)
+6.  If biHeight is negative, the bitmap origin is the upper-left corner
+7.  biBitCount
+8.  24 - if input file does not exist; 32 - if no write permissions
+9.  We want to read in file elements in one "chunk" each
+10. 1
+11. change offset of file pointer
+12. returns current file position
