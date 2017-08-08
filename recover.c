@@ -76,6 +76,7 @@ int main(int argc, char *argv[])
     fclose(outptr);
     
     // free memory
+    free(filename);
     free(buffer);
 
     // success
