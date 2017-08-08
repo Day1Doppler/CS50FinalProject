@@ -3,6 +3,8 @@
 #include <stdlib.h>
 
 #define BLOCK_LEN 512
+#define FILE_SUFFIX 5
+#define FILE_PREFIX 3
 
 int main(int argc, char *argv[])
 {
@@ -27,13 +29,12 @@ int main(int argc, char *argv[])
     // temporary storage - allocate memory for 512 bytes
     unsigned char *buffer = malloc(BLOCK_LEN);
     
-    // TODO - make ptr instead like a cool person. Using 8 for 5 (jpg./0 + 3 digits)
-    char filename[8];
+    // filename: prefix XXX, suffix jpg./0
+    char *filename = malloc(FILE_PREFIX + FILE_SUFFIX);
     
     // counter for naming convention, flag for when to start copying
     int h = 0;
     bool found_first_jpg = false;
-
 
     // try to open output file
     FILE *outptr;
