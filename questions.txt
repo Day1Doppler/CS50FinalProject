@@ -1,0 +1,7 @@
+0.  An invented long word said to mean a lung disease caused by inhaling very fine ash and sand dust. (https://en.oxforddictionaries.com/definition/pneumonoultramicroscopicsilicovolcanoconiosis)  
+1.  Returns resource usage measures for self, children, or threwad
+2.  16
+3.  Because they are stucts
+4.  TODO
+5.  TODO
+6.  Because we don't want to be able to change the values pointed to (and we want to know if we try to change accidentally).
