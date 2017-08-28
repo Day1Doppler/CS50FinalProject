@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+
+import sys
+from random import randrange
+
+
+from board import Board
+
+def main():
+
+    # greet user
+    greet()
+
+
+    while True:
+        # promt input
+        response = input().lower()
+
+        # clear screen
+        print(chr(27) + "[2J")
+
+        # quit if user wants to do so
+        if response == 'quit':
+            sys.exit("Goodbye!\n")
+
+        # tell user how to play
+        elif response == 'rules':
+            rules()
+
+        # start game
+        elif response == 'play':
+            play()
+
+        # send back to menu
+        else:
+            greet()
+
+def play():
+
+
+    # initialize board (could allow user to choose dim in future versions)
+    board = Board(7,6)
+
+    # print initial status
+    board.summarize()
+
+    # draw it
+    board.draw()
+
+    # keep doing this until game is over
+    while board.status() == "in progress":
+
+        # prompt for input
+        move = input("Choose column to drop piece into. Columns are labelled from the left side of screen as 0, 1, 2... ")
+
+        # clear screen
+        print(chr(27) + "[2J")
+
+        # move based on input
+        board.move(move)
+
+        # summarize current status
+        board.summarize()
+
+        # draw it
+        board.draw()
+
+    # let user choose to go back to menu
+    print("Game over! Type 'play' to play again, 'quit' to exit, or 'rules' if you need a refresher.")
+
+def greet():
+
+    # clear screen
+    print(chr(27) + "[2J")
+
+    # menu
+    print("Welcome to Connect Four!\n Type 'rules' for instructions, 'play' to get started, or 'quit' to exit.\n")
+
+def rules():
+    print("\n1. This is a two player game."
+        "\n2. Each player in his turn drops a square down any of the slots in the top of the grid. The square will drop to the lowest unfilled position in the board."
+        "\n3. The play alternates until one of the players gets four squares of his colour in a row. The four in a row can be horizontal, vertical, or diagonal."
+        "\n4. The first player to get four in a row wins."
+        "\n5. If the board is filled with pieces and neither player has 4 in a row, then the game is a draw."
+        "\n\n(Adapted from http://www.andersbaumann.dk/connectfour/rulesConnectFour.html)\n")
+
+
+
+if __name__ == "__main__":
+    main()
