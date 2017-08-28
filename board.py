@@ -128,7 +128,7 @@ class Board():
         return "in progress"
 
     def summarize(self):
-        """ Gives summary info to be printed by consumer"""
+        """ Gives summary info on game state"""
 
         def turn_map(n):
             if self.turn == 1:
